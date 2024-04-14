@@ -1,0 +1,15 @@
+insert into USERS (username, company_id) values ('kwickens0', 1);
+insert into USERS (username, company_id) values ('rdunrige1', 2);
+insert into USERS (username, company_id) values ('cstatton2', 3);
+insert into USERS (username, company_id) values ('nrunge3', 4);
+insert into USERS (username, company_id) values ('sfrankel4', 5);
+insert into USERS (username, company_id) values ('cmattaus5', 6);
+insert into USERS (username, company_id) values ('cgorden6', 7);
+insert into USERS (username, company_id) values ('blukasen7', 8);
+insert into USERS (username, company_id) values ('cschleswigholstein8', 9);
+insert into USERS (username, company_id) values ('pnetti9', 10);
+insert into USERS (username, company_id) values ('athoumassona', 11);
+insert into USERS (username, company_id) values ('gbaignardb', 12);
+insert into USERS (username, company_id) values ('lsantosc', 13);
+insert into USERS (username, company_id) values ('aweedenburgd', 14);
+insert into USERS (username, company_id) values ('ballrighte', 15);

@@ -2,7 +2,7 @@ spring:
     datasource:
         url: jdbc:postgresql://localhost:5432/ims
         username: postgres
-        password: I82much4dinner!
+        password: your_password
 
     output:
         ansi:

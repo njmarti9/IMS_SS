@@ -1,0 +1,15 @@
+insert into COMPANIES (company_name) values ('Digitube');
+insert into COMPANIES (company_name) values ('Cogilith');
+insert into COMPANIES (company_name) values ('Riffwire');
+insert into COMPANIES (company_name) values ('LiveZ');
+insert into COMPANIES (company_name) values ('Blogtag');
+insert into COMPANIES (company_name) values ('Innotype');
+insert into COMPANIES (company_name) values ('Voomm');
+insert into COMPANIES (company_name) values ('Yamia');
+insert into COMPANIES (company_name) values ('Topicware');
+insert into COMPANIES (company_name) values ('Devbug');
+insert into COMPANIES (company_name) values ('Tekfly');
+insert into COMPANIES (company_name) values ('Realmix');
+insert into COMPANIES (company_name) values ('Wikizz');
+insert into COMPANIES (company_name) values ('Yambee');
+insert into COMPANIES (company_name) values ('Zoomdog');
