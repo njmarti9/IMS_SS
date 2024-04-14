@@ -1,0 +1,17 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/ims
+        username: postgres
+        password: I82much4dinner!
+
+    output:
+        ansi:
+            enabled: ALWAYS
+
+server:
+    port: 8080
+
+logging:
+    level:
+        com:
+            skillstorm: debug

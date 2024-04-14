@@ -1,0 +1,174 @@
+:root {
+    --main-bg-color: white;
+    --secondary-bg-color: #88ca4d;
+    --titiary-bg-color: #f5f6f7;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+option:hover {
+    background-color: var(--secondary-bg-color);
+}
+
+input {
+    border: 1px solid black;
+}
+
+input:disabled {
+    background-color: black;
+    color: white;
+}
+
+form {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: var(--main-bg-color);
+    width: 30%;
+    gap: 20px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    color: var(--secondary-bg-color);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    background-color: var(--secondary-bg-color);
+}
+
+#main_h1 {
+    color: var(--main-bg-color);
+    /* margin-left: 25%; */
+}
+
+#create-warehouse-button, #create-product-button {
+    margin-bottom: 20px;
+}
+
+input[type=text], label {
+    font-size:  large;
+}
+
+button, input[type=submit], input[type=reset] {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button:hover, input[type=submit]:hover, input[type=reset]:hover {
+    background-color: var(--secondary-bg-color);
+}
+
+span {
+    text-decoration: underline;
+}
+
+span:hover {
+    color: blue;
+    font-size: large;
+}
+
+/* select {
+    margin-left: auto;
+} */
+
+#outer-product-table-div, #warehouse-table-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#product-to-warehouse-btn {
+    margin-bottom: 20px;
+}
+
+#warehouse-table, #product-table {
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 3px solid black;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border-right: 1px solid black;
+}
+
+#footer-right-border {
+    border-right: 1px solid black;
+}
+
+tfoot td {
+    border-right: none;
+    border-top: 1px solid black;
+    text-align: center;
+}
+
+thead th {
+    border-bottom: 1px solid black;
+}
+
+
+tbody td {
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--titiary-bg-color);
+}
+
+.form-group{
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
+.form-group label {
+    width: 50%;
+}
+
+.form-group input {
+    width: 50%;
+}
+
+#create-warehouse-popup-form-div, 
+#edit-warehouse-popup-form-div, 
+#delete-warehouse-popup-form-div,
+#create-product-popup-form-div, 
+#edit-product-popup-form-div, 
+#delete-product-popup-form-div {
+    display: none;
+}
+
+.popup-form {
+    flex: 1;
+}

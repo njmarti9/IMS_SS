@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <p>Invisible</p>
+        <h1 id="main_h1">Inventory Management System</h1>
+        <select name="user" id="user" onChange="setCurrentUser()">
+            <option value="kwickens0" selected>kwickens0</option>
+            <option value="rdunrige1">rdunrige1</option>
+            <option value="cstatton2">cstatton2</option>
+            <option value="nrunge3">nrunge3</option>
+            <option value="sfrankel4">sfrankel4</option>
+            <option value="cmattaus5">cmattaus5</option>
+            <option value="cgorden6">cgorden6</option>
+            <option value="blukasen7">blukasen7</option>
+            <option value="cschleswigholstein8">cschleswigholstein8</option>
+            <option value="pnetti9">pnetti9</option>
+            <option value="athoumassona">athoumassona</option>
+            <option value="gbaignardb">gbaignardb</option>
+            <option value="lsantosc">lsantosc</option>
+            <option value="aweedenburgd">aweedenburgd</option>
+            <option value="ballrighte">ballrighte</option>
+        </select>
+    </header>
+    <main>
+        <div id="warehouse-table-div">
+            <h2 id="warehouse-table-title">Warehouses</h2>
+            <button id="create-warehouse-button" onclick="showCreateWarehouseForm()">Create Warehouse</button>
+            <div id="inner-warehouse-table-div">
+                <table id="warehouse-table">
+                    <thead>
+                        <tr>
+                            <th>ID      </th>
+                            <th>Name    </th>
+                            <th>Location</th>
+                            <th>Capacity</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="warehouse-table-body">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="outer-product-table-div">
+            <h2 id="product-table-title">Products</h2>
+            <button id="create-product-button" onclick="showCreateProductForm()">Create Product</button>
+            <button id="product-to-warehouse-btn">Back</button>
+            <div id="inner-product-table-div">
+                <table id="product-table">
+                    <thead>
+                        <tr>
+                            <th>ID      </th>
+                            <th>Name    </th>
+                            <th>Quantity</th>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="product-table-body">
+    
+                    </tbody>
+                    <tfoot id="product-table-foot">
+
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <div class="popup-form" id="create-warehouse-popup-form-div">
+            <form id="create-warehouse-popup-form" action="#">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input id="create-warehouse-name" name="create-warehouse-name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input id="create-warehouse-location" name="create-warehouse-location" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Capacity</label>
+                    <input id="create-warehouse-capacity" name="create-warehouse-capacity" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input id="create-button" name="create-button" type="submit" value="Create">
+                    <input id="cancel-create-button" name="cancel-create-button" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+
+        <div class="popup-form" id="edit-warehouse-popup-form-div">
+            <form id="edit-warehouse-popup-form" action="#">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input id="edit-warehouse-id" name="edit-warehouse-id" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input id="edit-warehouse-name" name="edit-warehouse-name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input id="edit-warehouse-location" name="edit-warehouse-location" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Capacity</label>
+                    <input id="edit-warehouse-capacity" name="edit-warehouse-capacity" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input id="edit-button" name="edit-button" type="submit" value="Update">
+                    <input id="cancel-edit-button" name="cancel-edit-button" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+
+        <div class="popup-form" id="delete-warehouse-popup-form-div">
+            <form id="delete-warehouse-popup-form" action="#">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input id="delete-warehouse-id" name="delete-warehouse-id" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input id="delete-warehouse-name" name="delete-warehouse-name" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input id="delete-warehouse-location" name="delete-warehouse-location" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Capacity</label>
+                    <input id="delete-warehouse-capacity" name="delete-warehouse-capacity" type="text" class="form-control" disabled>
+                </div>
+
+                <div class="form-group">
+                    <input id="delete-button" name="delete-button" type="submit" value="Delete">
+                    <input id="cancel-delete-button" name="cancel-delete-button" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+
+        <div class="popup-form" id="create-product-popup-form-div">
+            <form id="create-product-popup-form" action="#">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input id="create-product-name" name="create-product-name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input id="create-product-quantity" name="create-product-quantity" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Size</label>
+                    <input id="create-product-size" name="create-product-size" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input id="create-product-price" name="create-product-price" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input id="create-button" name="create-button" type="submit" value="Create">
+                    <input id="cancel-create-button" name="cancel-create-button" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+
+        <div class="popup-form" id="edit-product-popup-form-div">
+            <form id="edit-product-popup-form" action="#">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input id="edit-product-id" name="edit-product-id" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input id="edit-product-name" name="edit-product-name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input id="edit-product-quantity" name="edit-product-quantity" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Size</label>
+                    <input id="edit-product-size" name="edit-product-size" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input id="edit-product-price" name="edit-product-price" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input id="edit-button" name="edit-button" type="submit" value="Update">
+                    <input id="cancel-edit-button" name="cancel-edit-button" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+
+        <div class="popup-form" id="delete-product-popup-form-div">
+            <form id="delete-product-popup-form" action="#">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input id="delete-product-id" name="delete-product-id" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input id="delete-product-name" name="delete-product-name" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input id="delete-product-quantity" name="delete-product-quantity" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Size</label>
+                    <input id="delete-product-size" name="delete-product-size" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input id="delete-product-price" name="delete-product-price" type="text" class="form-control" disabled>
+                </div>
+
+                <div class="form-group">
+                    <input id="delete-button" name="delete-button" type="submit" value="Delete">
+                    <input id="cancel-delete-button" name="cancel-delete-button" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
